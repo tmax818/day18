@@ -7,4 +7,17 @@ const getText = () => {
     .catch(err => console.log(err));
 };
 
+const jsonPlace = () => {
+  fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    .then(json => {
+      let output = "";
+      json.forEach(post => {
+        output += `<li>${post.title}</li>`;
+      });
+      document.getElementById("output").innerHTML = output;
+    });
+};
+
 document.getElementById("butt-text").addEventListener("click", getText);
+document.getElementById("butt-api").addEventListener("click", jsonPlace);
