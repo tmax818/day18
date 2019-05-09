@@ -1,5 +1,5 @@
 const getText = () => {
-  fetch("test.txt")
+  fetch("http://www.tylermaxwell.co/day18/test.txt")
     .then(res => res.text())
     .then(res => {
       document.getElementById("output").innerHTML = res;
