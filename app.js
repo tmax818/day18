@@ -19,5 +19,18 @@ const jsonPlace = () => {
     });
 };
 
+const getJson = () => {
+  fetch("posts.json")
+    .then(res => res.json())
+    .then(json => {
+      let output = "";
+      json.forEach(post => {
+        output += `<li>${post.title}</li>`;
+      });
+      document.getElementById("output").innerHTML = output;
+    });
+};
+
 document.getElementById("butt-text").addEventListener("click", getText);
 document.getElementById("butt-api").addEventListener("click", jsonPlace);
+document.getElementById("butt-json").addEventListener("click", getJson);
