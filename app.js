@@ -20,7 +20,7 @@ const jsonPlace = () => {
 };
 
 const getJson = () => {
-  fetch("posts.json")
+  fetch("http://www.tylermaxwell.co/day18/posts.json")
     .then(res => res.json())
     .then(json => {
       let output = "";
